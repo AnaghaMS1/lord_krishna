@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:lordkrishna/pages/selectCompany.dart';
+
 
 class LoginPage extends StatelessWidget {
   @override
@@ -9,6 +11,7 @@ class LoginPage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
+
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               // Custom Title and Logo
@@ -107,7 +110,9 @@ class LoginPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>MyListview()));
+                    },
                     child: Text('LOGIN'),
                   ),
                 ),
