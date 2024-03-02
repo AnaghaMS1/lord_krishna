@@ -58,11 +58,25 @@ class _MyListviewState extends State<MyListview> {
                                 backgroundImage: NetworkImage(companies[index]['image']),
                               ),
                               title: Text(companies[index]['name']),
+                              trailing: selectedCompany == companies[index]['name']
+                                  ? Icon(Icons.check_circle,
+                                color: Colors.green[700],)
+                                  : Icon(
+                                Icons.circle_outlined,
+                                color: Colors.grey,
+                              ),
+
+                              onTap: () {
+                                setState(() {
+                                  selectedCompany = companies[index]['name'];
+                                });
+                              },
                             ),
                           );
                         },
                       ),
                     ),
+
                     SizedBox(height: 20),
                     Container(
                       padding: EdgeInsets.symmetric(horizontal: 29),
@@ -78,6 +92,7 @@ class _MyListviewState extends State<MyListview> {
                             ),
                           ),
                           onPressed: () {
+                            print('Selected company: $selectedCompany');
 
                           },
                           child: Text('DONE'),
